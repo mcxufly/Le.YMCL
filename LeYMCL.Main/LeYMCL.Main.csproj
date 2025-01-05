@@ -10,18 +10,18 @@
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
         <ApplicationIcon>Public\Assets\LeYMCL-Icon.ico</ApplicationIcon>
         <SignAssembly>False</SignAssembly>
-        <Title>YMCL</Title>
-        <Company></Company>
-        <Authors>DaiYu | http://daiyu.fun</Authors>
+        <Title>LeYMCL</Title>
+        <Company>legetle</Company>
+        <Authors>MCXuFly</Authors>
         <Product>Le Yu Minecraft Launcher</Product>
         <Description>Le Yu Minecraft Launcher</Description>
-        <Copyright>DaiYu | http://daiyu.fun</Copyright>
+        <Copyright>Legetle</Copyright>
         <PackageProjectUrl>http://ymcl.daiyu.fun</PackageProjectUrl>
         <PackageIcon>LeYMCL-Icon.png</PackageIcon>
-        <RepositoryUrl>https://github.com/DaiYu-233/YMCL.Avalonia</RepositoryUrl>
-        <CFBundleName>YMCL</CFBundleName>
-        <CFBundleDisplayName>YMCL</CFBundleDisplayName>
-        <CFBundleIdentifier>fun.daiyu.ymcl</CFBundleIdentifier>
+        <RepositoryUrl>https://github.com/mcxufly/Le.YMCL</RepositoryUrl>
+        <CFBundleName>LeYMCL</CFBundleName>
+        <CFBundleDisplayName>LeYMCL</CFBundleDisplayName>
+        <CFBundleIdentifier>com.legetle.leymcl</CFBundleIdentifier>
         <CFBundleVersion>1.0.0</CFBundleVersion>
         <CFBundlePackageType>AAPL</CFBundlePackageType>
         <CFBundleSignature>YuMinecraftLauncher</CFBundleSignature>
@@ -145,9 +145,9 @@
         <None Remove="Public\Assets\Transparent-Icon.png" />
         <None Remove="Public\Assets\YCML-Icon.ico" />
         <None Remove="Public\Assets\LeYMCL-Icon.png" />
-        <None Remove="Public\Bins\YMCL.Starter.win.exe" />
-        <None Remove="Public\Bins\YMCL.Update.Helper.linux" />
-        <None Remove="Public\Bins\YMCL.Update.Helper.win.exe" />
+        <None Remove="Public\Bins\LeYMCL.Starter.win.exe" />
+        <None Remove="Public\Bins\LeYMCL.Update.Helper.linux" />
+        <None Remove="Public\Bins\LeYMCL.Update.Helper.win.exe" />
         <None Remove="Public\Texts\DateTime.txt" />
         <None Remove="Public\Texts\IsAloneProgram.txt" />
     </ItemGroup>
