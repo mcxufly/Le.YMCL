@@ -40,7 +40,7 @@ jobs:
       - name: Time
         id: date
         run: |
-          echo "${{ needs.time.outputs.v }}" > ./YMCL.Main/Public/Texts/DateTime.txt
+          echo "${{ needs.time.outputs.v }}" > ./LeYMCL.Main/Public/Texts/DateTime.txt
           echo "Version is ${{ needs.time.outputs.v }}"
       - name: Dependency
         run: |
@@ -49,14 +49,14 @@ jobs:
           sudo apt-get install fuse
       - name: Build-AppImage
         run: |
-          cd ./YMCL.Main
+          cd ./LeYMCL.Main
           sudo su
-          pupnet --runtime linux-x64 --kind appimage -o YMCL.Main.linux.x64.AppImage -y --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
-          pupnet --runtime linux-arm --kind appimage -o YMCL.Main.linux.arm.AppImage -y --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
-          pupnet --runtime linux-arm64 --kind appimage -o YMCL.Main.linux.arm64.AppImage -y --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
+          pupnet --runtime linux-x64 --kind appimage -o LeYMCL.Main.linux.x64.AppImage -y --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
+          pupnet --runtime linux-arm --kind appimage -o LeYMCL.Main.linux.arm.AppImage -y --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
+          pupnet --runtime linux-arm64 --kind appimage -o LeYMCL.Main.linux.arm64.AppImage -y --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
       - name: Build-MacOsApp
         run: |
-          cd ./YMCL.Main
+          cd ./LeYMCL.Main
           sudo su
           dotnet restore -r osx-x64
           dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-x64  -property:Configuration=Release -p:SelfContained=true
@@ -64,36 +64,36 @@ jobs:
           dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-arm64  -property:Configuration=Release -p:SelfContained=true
           cd ./bin/Release/net8.0/
           cd ./osx-x64/publish/
-          zip -9 -r ../../YMCL.Main.osx.mac.x64.app.zip ./YMCL.app
+          zip -9 -r ../../LeYMCL.Main.osx.mac.x64.app.zip ./YMCL.app
           cd ../../
           cd ./osx-arm64/publish/
-          zip -9 -r ../../YMCL.Main.osx.mac.arm64.app.zip ./YMCL.app
+          zip -9 -r ../../LeYMCL.Main.osx.mac.arm64.app.zip ./YMCL.app
       - name: Build-WinExe
         run: |
-          cd ./YMCL.Main
+          cd ./LeYMCL.Main
           sudo su
           dotnet publish -r win-x86 --self-contained true -p:PublishSingleFile=true
           dotnet publish -r win-x64 --self-contained true -p:PublishSingleFile=true
           dotnet publish -r win-arm64 --self-contained true -p:PublishSingleFile=true
-          mv ./bin/Release/net8.0/win-x86/publish/YMCL.Main.exe ./bin/Release/net8.0/win-x86/publish/YMCL.Main.win7.x86.exe
-          mv ./bin/Release/net8.0/win-x64/publish/YMCL.Main.exe ./bin/Release/net8.0/win-x64/publish/YMCL.Main.win7.x64.exe
-          mv ./bin/Release/net8.0/win-arm64/publish/YMCL.Main.exe ./bin/Release/net8.0/win-arm64/publish/YMCL.Main.win7.arm64.exe
+          mv ./bin/Release/net8.0/win-x86/publish/LeYMCL.Main.exe ./bin/Release/net8.0/win-x86/publish/LeYMCL.Main.win7.x86.exe
+          mv ./bin/Release/net8.0/win-x64/publish/LeYMCL.Main.exe ./bin/Release/net8.0/win-x64/publish/LeYMCL.Main.win7.x64.exe
+          mv ./bin/Release/net8.0/win-arm64/publish/LeYMCL.Main.exe ./bin/Release/net8.0/win-arm64/publish/LeYMCL.Main.win7.arm64.exe
           cd ./bin/Release/net8.0/
           cd ./win-x86/publish/
-          zip -9 -r "../../YMCL.Main.win7.x86.exe.zip" "./YMCL.Main.win7.x86.exe"
+          zip -9 -r "../../LeYMCL.Main.win7.x86.exe.zip" "./LeYMCL.Main.win7.x86.exe"
           cd ../../
           cd ./win-x64/publish/
-          zip -9 -r "../../YMCL.Main.win7.x64.exe.zip" "./YMCL.Main.win7.x64.exe"
+          zip -9 -r "../../LeYMCL.Main.win7.x64.exe.zip" "./LeYMCL.Main.win7.x64.exe"
           cd ../../
           cd ./win-arm64/publish/
-          zip -9 -r "../../YMCL.Main.win7.arm64.exe.zip" "./YMCL.Main.win7.arm64.exe"
+          zip -9 -r "../../LeYMCL.Main.win7.arm64.exe.zip" "./LeYMCL.Main.win7.arm64.exe"
       - name: UploadArtifacts
         uses: actions/upload-artifact@v3
         with:
           name: linux-artifacts
           path: |
-            YMCL.Main/Deploy/OUT/*
-            YMCL.Main/bin/Release/net8.0/*.zip
+            LeYMCL.Main/Deploy/OUT/*
+            LeYMCL.Main/bin/Release/net8.0/*.zip
 
   win:
     runs-on: windows-latest
@@ -107,28 +107,28 @@ jobs:
           choco: innosetup
       - name: Chinesize-InnoSetup
         run: |
-          Copy-Item "./YMCL.Main/Public/Texts/Default.isl" "C:\Program Files (x86)\Inno Setup 6\Default.isl" -Force
+          Copy-Item "./LeYMCL.Main/Public/Texts/Default.isl" "C:\Program Files (x86)\Inno Setup 6\Default.isl" -Force
       - name: Dependency-Pupnet
         run: |
           dotnet tool install -g KuiperZone.PupNet
       - name: Time
         id: date
         run: |
-          echo "${{ needs.time.outputs.v }}" > ./YMCL.Main/Public/Texts/DateTime.txt
+          echo "${{ needs.time.outputs.v }}" > ./LeYMCL.Main/Public/Texts/DateTime.txt
           echo "Version is ${{ needs.time.outputs.v }}"
         shell: bash
       - name: Build
         run: |
-          cd ./YMCL.Main
-          pupnet -r win-x64 -k setup -y -o YMCL.Main.win.x64.installer.exe --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
-          pupnet -r win-x86 -k setup -y -o YMCL.Main.win.x86.installer.exe --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
-          pupnet -r win-arm64 -k setup -y -o YMCL.Main.win.arm64.installer.exe --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
+          cd ./LeYMCL.Main
+          pupnet -r win-x64 -k setup -y -o LeYMCL.Main.win.x64.installer.exe --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
+          pupnet -r win-x86 -k setup -y -o LeYMCL.Main.win.x86.installer.exe --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
+          pupnet -r win-arm64 -k setup -y -o LeYMCL.Main.win.arm64.installer.exe --app-version ${{ needs.time.outputs.y }}.${{ needs.time.outputs.md }}.${{ needs.time.outputs.hm }}
       - name: UploadArtifacts
         uses: actions/upload-artifact@v3
         with:
           name: win-artifacts
           path: |
-            YMCL.Main/Deploy/OUT/*
+            LeYMCL.Main/Deploy/OUT/*
 
   publish:
     needs: [linux, win, time]

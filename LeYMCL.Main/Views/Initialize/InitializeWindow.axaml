@@ -1,0 +1,55 @@
+<Window
+    x:Class="LeYMCL.Main.Views.Initialize.InitializeWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:properties="clr-namespace:LeYMCL.Main.Public.Langs"
+    xmlns:uc="clr-namespace:LeYMCL.Main.Public.Controls"
+    xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+    Title="Le Yu Minecraft Launcher"
+    Width="860"
+    Height="480"
+    MinWidth="860"
+    MinHeight="450"
+    MaxWidth="860"
+    MaxHeight="450"
+    d:DesignHeight="0"
+    d:DesignWidth="0"
+    CanResize="False"
+    FontFamily="{DynamicResource Font}"
+    FontWeight="{DynamicResource FontWeight}"
+    IsHitTestVisible="True"
+    IsVisible="True"
+    SystemDecorations="None"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Styles>
+        <Style Selector="Window">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Opacity="0" Color="White" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Styles>
+    <Border
+        x:Name="Root"
+        Background="{DynamicResource 1x}"
+        ClipToBounds="True"
+        CornerRadius="8"
+        Opacity="{DynamicResource Opacity}">
+        <Grid>
+            <DockPanel>
+                <uc:TitleBar
+                    Name="TitleBar"
+                    Title="Le Yu Minecraft Launcher"
+                    DockPanel.Dock="Top"
+                    IsCloseBtnExitApp="True"
+                    IsCloseBtnShow="True"
+                    IsMaxBtnShow="False" />
+                <ui:Frame Name="Frame" />
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>

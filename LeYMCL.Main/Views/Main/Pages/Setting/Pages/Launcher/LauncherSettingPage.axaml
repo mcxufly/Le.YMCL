@@ -1,0 +1,425 @@
+<UserControl
+    x:Class="LeYMCL.Main.Views.Main.Pages.Setting.Pages.Launcher.LauncherSettingPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pathIcon="clr-namespace:LeYMCL.Main.Public.Controls"
+    xmlns:properties="clr-namespace:LeYMCL.Main.Public.Langs"
+    xmlns:uc="clr-namespace:LeYMCL.Main.Public.Controls"
+    xmlns:ui="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Border x:Name="Root" CornerRadius="8">
+        <Border.Transitions>
+            <Transitions>
+                <ThicknessTransition
+                    Easing="BounceEaseIn"
+                    Property="Margin"
+                    Duration="0:0:0.45" />
+            </Transitions>
+        </Border.Transitions>
+        <Border
+            Margin="10"
+            ClipToBounds="True"
+            CornerRadius="5">
+            <ScrollViewer>
+                <StackPanel Margin="0" Spacing="10">
+                    <Border
+                        Padding="6.5"
+                        Background="{DynamicResource 1x}"
+                        CornerRadius="5"
+                        Opacity="{DynamicResource Opacity}">
+                        <Grid>
+                            <Grid Margin="10,0,0,0">
+                                <TextBlock
+                                    x:Name="Version"
+                                    Margin="0,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Font}"
+                                    FontSize="17"
+                                    FontWeight="Thin"
+                                    Foreground="{DynamicResource TextColor}" />
+                            </Grid>
+                            <Button
+                                x:Name="CheckUpdateBtn"
+                                Height="30.5"
+                                Margin="200,0,9,0"
+                                HorizontalAlignment="Right"
+                                Classes="Primary"
+                                Content="{x:Static properties:MainLang.CheckUpdate}"
+                                FontFamily="{DynamicResource Font}"
+                                Foreground="White"
+                                Theme="{DynamicResource SolidButton}" />
+                        </Grid>
+
+                    </Border>
+                    <Border
+                        Padding="6.5"
+                        Background="{DynamicResource 1x}"
+                        CornerRadius="5"
+                        Opacity="{DynamicResource Opacity}">
+                        <StackPanel Margin="5" Spacing="5">
+                            <Border
+                                Padding="8"
+                                Background="{DynamicResource 2x}"
+                                CornerRadius="5">
+                                <DockPanel>
+                                    <Image
+                                        Width="24"
+                                        Height="24"
+                                        Margin="7,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        DockPanel.Dock="Left">
+                                        <Image.Source>
+                                            <DrawingImage>
+                                                <DrawingImage.Drawing>
+                                                    <GeometryDrawing Brush="{DynamicResource TextColor}">
+                                                        <GeometryDrawing.Geometry>
+                                                            <PathGeometry Figures="M521.5,256C509.8330078125,264 498.5830078125,271.8330078125 487.75,279.5 476.9169921875,287.1669921875 465.75,294 454.25,300 442.75,306 430.6669921875,310.8330078125 418,314.5 405.3330078125,318.1669921875 391.6669921875,320 377,320L64,320 64,800C64,813 66.5,825.3330078125 71.5,837 76.5,848.6669921875 83.41670227050781,858.9169921875 92.25,867.75 101.08300018310547,876.5830078125 111.33300018310547,883.5 123,888.5 134.66700744628906,893.5 147,896 160,896L864,896C877,896 889.3330078125,893.5 901,888.5 912.6669921875,883.5 922.9169921875,876.5830078125 931.75,867.75 940.5830078125,858.9169921875 947.5,848.6669921875 952.5,837 957.5,825.3330078125 960,813 960,800L960,352C960,339 957.5,326.6669921875 952.5,315 947.5,303.3330078125 940.5830078125,293.0830078125 931.75,284.25 922.9169921875,275.4169921875 912.6669921875,268.5 901,263.5 889.3330078125,258.5 877,256 864,256L521.5,256z M160,128C147,128 134.66700744628906,130.5 123,135.5 111.33300018310547,140.5 101.08300018310547,147.41700744628906 92.25,156.25 83.41670227050781,165.08299255371094 76.5,175.33299255371094 71.5,187 66.5,198.66700744628906 64,211 64,224L64,256 377,256C386,256 394.3330078125,254.83299255371094 402,252.5 409.6669921875,250.16700744628906 417.1669921875,247.08299255371094 424.5,243.25 431.8330078125,239.41700744628906 438.8330078125,235.16700744628906 445.5,230.5 452.1669921875,225.83299255371094 459,221 466,216 458.3330078125,205.66700744628906 450.8330078125,195.25 443.5,184.75 436.1669921875,174.25 428.1669921875,164.83299255371094 419.5,156.5 410.8330078125,148.16700744628906 401.0830078125,141.33299255371094 390.25,136 379.4169921875,130.66700744628906 366.6669921875,128 352,128L160,128z M156.5,64L352,64C375,64.0000991821289 394.75,67.5833969116211 411.25,74.75 427.75,81.91670227050781 442.6669921875,91.5 456,103.5 469.3330078125,115.5 481.6669921875,129.16700744628906 493,144.5 504.3330078125,159.83299255371094 516,175.66700744628906 528,192L867.5,192C888.5,192 908.5,196.25 927.5,204.75 946.5,213.25 963.0830078125,224.58299255371094 977.25,238.75 991.4169921875,252.91700744628906 1002.75,269.5 1011.25,288.5 1019.75,307.5 1024,327.5 1024,348.5L1024,803.5C1024,824.5 1019.75,844.5 1011.25,863.5 1002.75,882.5 991.4169921875,899.0830078125 977.25,913.25 963.0830078125,927.4169921875 946.5,938.75 927.5,947.25 908.5,955.75 888.5,960 867.5,960L156.5,960C135.5,960 115.5,955.75 96.5,947.25 77.5,938.75 60.91669845581055,927.4169921875 46.75,913.25 32.58330154418945,899.0830078125 21.25,882.5 12.75,863.5 4.25,844.5 0,824.5 0,803.5L0,220.5C0,199.5 4.25,179.5 12.75,160.5 21.25,141.5 32.58330154418945,124.91699981689453 46.75,110.75 60.91669845581055,96.5833969116211 77.5,85.2500991821289 96.5,76.75 115.5,68.2500991821289 135.5,64.0000991821289 156.5,64z" />
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                </DrawingImage.Drawing>
+                                            </DrawingImage>
+                                        </Image.Source>
+                                    </Image>
+                                    <Button
+                                        Name="OpenUserDataFolderBtn"
+                                        VerticalAlignment="Center"
+                                        Content="{x:Static properties:MainLang.OpenFolder}"
+                                        DockPanel.Dock="Right"
+                                        FontFamily="{DynamicResource Font}" />
+                                    <StackPanel Margin="10,0,0,0" DockPanel.Dock="Left">
+                                        <TextBlock
+                                            HorizontalAlignment="Left"
+                                            FontFamily="{DynamicResource Font}"
+                                            FontSize="14">
+                                            <Run Text="{x:Static properties:MainLang.UserDataFolder}" />
+                                            <Run
+                                                Name="UserDataSize"
+                                                FontSize="12"
+                                                Foreground="{DynamicResource GrayColor}"
+                                                Text="0 KiB" />
+                                        </TextBlock>
+                                        <TextBlock
+                                            Name="UserDataFolderPath"
+                                            Margin="-1,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            FontFamily="{DynamicResource Font}"
+                                            FontSize="12"
+                                            Foreground="{DynamicResource GrayColor}"
+                                            Text="{x:Static properties:MainLang.UserDataFolder}" />
+                                    </StackPanel>
+                                </DockPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <Border
+                        Background="{DynamicResource 1x}"
+                        CornerRadius="5"
+                        Opacity="{DynamicResource Opacity}">
+                        <DockPanel>
+                            <WrapPanel
+                                Margin="8,10,10,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                DockPanel.Dock="Top">
+                                <HyperlinkButton
+                                    Margin="0,0,2,0"
+                                    HorizontalAlignment="Right"
+                                    Cursor="Hand"
+                                    FontFamily="{DynamicResource Font}"
+                                    NavigateUri="mc.legetle.com/">
+                                    <Border Margin="-5,0,-6,0" Padding="0,0,5,0">
+                                        <DockPanel>
+                                            <Border
+                                                Width="38"
+                                                Height="38"
+                                                Margin="4,0,0,0"
+                                                CornerRadius="5,5,5,5">
+                                                <Image
+                                                    Width="35"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Center">
+                                                </Image>
+                                            </Border>
+                                            <StackPanel Margin="6.5,0,0,0">
+                                                <TextBlock
+                                                    FontSize="16"
+                                                    Text="Le Yu Minecraft Launcher"
+                                                    TextDecorations="{x:Null}" />
+                                                <TextBlock
+                                                    Margin="1,0,0,0"
+                                                    FontSize="13"
+                                                    Foreground="{DynamicResource TextColor}"
+                                                    Text="mc.legetle.com"
+                                                    TextDecorations="{x:Null}" />
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </Border>
+                                </HyperlinkButton>
+                                <HyperlinkButton
+                                    Margin="0,0,2,0"
+                                    HorizontalAlignment="Right"
+                                    Cursor="Hand"
+                                    FontFamily="{DynamicResource Font}"
+                                    NavigateUri="https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0">
+                                    <Border Margin="-5,0,-6,0" Padding="0,0,5,0">
+                                        <DockPanel>
+                                            <Border
+                                                Width="35"
+                                                Height="35"
+                                                Margin="4,0,0,0"
+                                                ClipToBounds="True"
+                                                CornerRadius="5,5,5,5">
+                                                <Image HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                    <Image.Source>
+                                                        <DrawingImage>
+                                                            <DrawingImage.Drawing>
+                                                                <DrawingGroup>
+                                                                    <DrawingGroup.ClipGeometry>
+                                                                        <RectangleGeometry Rect="0,0,456,456" />
+                                                                    </DrawingGroup.ClipGeometry>
+                                                                    <GeometryDrawing Brush="#FF512BD4">
+                                                                        <GeometryDrawing.Geometry>
+                                                                            <RectangleGeometry
+                                                                                RadiusX="0"
+                                                                                RadiusY="0"
+                                                                                Rect="0,0,456,456" />
+                                                                        </GeometryDrawing.Geometry>
+                                                                    </GeometryDrawing>
+                                                                    <GeometryDrawing Brush="#FFFFFFFF">
+                                                                        <GeometryDrawing.Geometry>
+                                                                            <PathGeometry Figures="M81.2738,291.333C78.0496,291.333 75.309,290.259 73.052,288.11 70.795,285.906 69.6665,283.289 69.6665,280.259 69.6665,277.173 70.795,274.529 73.052,272.325 75.309,270.121 78.0496,269.019 81.2738,269.019 84.5518,269.019 87.3193,270.121 89.5763,272.325 91.887,274.529 93.0424,277.173 93.0424,280.259 93.0424,283.289 91.887,285.906 89.5763,288.11 87.3193,290.259 84.5518,291.333 81.2738,291.333z" />
+                                                                        </GeometryDrawing.Geometry>
+                                                                    </GeometryDrawing>
+                                                                    <GeometryDrawing Brush="#FFFFFFFF">
+                                                                        <GeometryDrawing.Geometry>
+                                                                            <PathGeometry Figures="M210.167,289.515L189.209,289.515 133.994,202.406C132.597,200.202,131.441,197.915,130.528,195.546L130.044,195.546C130.474,198.081,130.689,203.508,130.689,211.827L130.689,289.515 112.149,289.515 112.149,171 134.477,171 187.839,256.043C190.096,259.57,191.547,261.994,192.192,263.316L192.514,263.316C191.977,260.176,191.708,254.859,191.708,247.365L191.708,171 210.167,171 210.167,289.515z" />
+                                                                        </GeometryDrawing.Geometry>
+                                                                    </GeometryDrawing>
+                                                                    <GeometryDrawing Brush="#FFFFFFFF">
+                                                                        <GeometryDrawing.Geometry>
+                                                                            <PathGeometry Figures="M300.449,289.515L235.561,289.515 235.561,171 297.87,171 297.87,187.695 254.746,187.695 254.746,221.249 294.485,221.249 294.485,237.861 254.746,237.861 254.746,272.903 300.449,272.903 300.449,289.515z" />
+                                                                        </GeometryDrawing.Geometry>
+                                                                    </GeometryDrawing>
+                                                                    <GeometryDrawing Brush="#FFFFFFFF">
+                                                                        <GeometryDrawing.Geometry>
+                                                                            <PathGeometry Figures="M392.667,187.695L359.457,187.695 359.457,289.515 340.272,289.515 340.272,187.695 307.143,187.695 307.143,171 392.667,171 392.667,187.695z" />
+                                                                        </GeometryDrawing.Geometry>
+                                                                    </GeometryDrawing>
+                                                                </DrawingGroup>
+                                                            </DrawingImage.Drawing>
+                                                        </DrawingImage>
+                                                    </Image.Source>
+                                                </Image>
+                                            </Border>
+                                            <StackPanel Margin="6.5,0,0,0">
+                                                <TextBlock
+                                                    FontSize="16"
+                                                    Text="Microsoft .NET"
+                                                    TextDecorations="{x:Null}" />
+                                                <TextBlock
+                                                    Margin="2,0,0,0"
+                                                    FontSize="13"
+                                                    Foreground="{DynamicResource TextColor}"
+                                                    Text="dotnet.microsoft.com"
+                                                    TextDecorations="{x:Null}" />
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </Border>
+                                </HyperlinkButton>
+                                <HyperlinkButton
+                                    Margin="0,0,2,0"
+                                    HorizontalAlignment="Right"
+                                    Cursor="Hand"
+                                    FontFamily="{DynamicResource Font}"
+                                    NavigateUri="https://docs.avaloniaui.net/">
+                                    <Border Margin="-5,0,-6,0" Padding="0,0,5,0">
+                                        <DockPanel>
+                                            <Border
+                                                Width="36"
+                                                Height="36"
+                                                Margin="4,0,0,0"
+                                                CornerRadius="5,5,5,5">
+                                                <Image HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                    <Image.Source>
+                                                        <DrawingImage>
+                                                            <DrawingImage.Drawing>
+                                                                <DrawingGroup>
+                                                                    <DrawingGroup.Children>
+                                                                        <GeometryDrawing Brush="#FFFFFFFF">
+                                                                            <GeometryDrawing.Geometry>
+                                                                                <PathGeometry Figures="M30.466,34.928L30.676000000000002,34.928A4.256,4.256,0,0,0,34.906000000000006,31.174999999999997L34.93600000000001,16.994999999999997C34.686,7.567 26.965,0 17.476,0 7.832,0 0.014,7.82 0.014,17.463 0.014,27.005000000000003 7.666,34.763000000000005 17.169,34.927L30.466,34.927z" />
+                                                                            </GeometryDrawing.Geometry>
+                                                                        </GeometryDrawing>
+                                                                        <GeometryDrawing Brush="#FF8B44AC">
+                                                                            <GeometryDrawing.Geometry>
+                                                                                <StreamGeometry>M17.524,5.948C12.027000000000001,5.948,7.4300000000000015,9.801,6.286000000000001,14.954A2.603,2.603,0,0,1,6.286000000000001,19.964C7.4300000000000015,25.118 12.026000000000002,28.970999999999997 17.524,28.970999999999997 19.525000000000002,28.970999999999997 21.407,28.460999999999995 23.046,27.561999999999998L23.046,28.891999999999996 29.036,28.891999999999996 29.036,17.938C29.041,17.791999999999998 29.036,17.608 29.036,17.461 29.036,11.102999999999998 23.882,5.949999999999999 17.524,5.949999999999999z M12.01,17.459A5.514,5.514,0,1,1,23.038,17.459A5.514,5.514,0,0,1,12.01,17.459z</StreamGeometry>
+                                                                            </GeometryDrawing.Geometry>
+                                                                        </GeometryDrawing>
+                                                                        <GeometryDrawing Brush="#FF8B44AC">
+                                                                            <GeometryDrawing.Geometry>
+                                                                                <PathGeometry Figures="M7.368,17.452A1.842,1.842,0,1,1,3.684,17.452A1.842,1.842,0,0,1,7.368,17.452z" />
+                                                                            </GeometryDrawing.Geometry>
+                                                                        </GeometryDrawing>
+                                                                    </DrawingGroup.Children>
+                                                                    <DrawingGroup.ClipGeometry>
+                                                                        <RectangleGeometry Rect="0,0,35,35" />
+                                                                    </DrawingGroup.ClipGeometry>
+                                                                </DrawingGroup>
+                                                            </DrawingImage.Drawing>
+                                                        </DrawingImage>
+                                                    </Image.Source>
+                                                </Image>
+                                            </Border>
+                                            <StackPanel Margin="6.5,0,0,0">
+                                                <TextBlock
+                                                    FontSize="16"
+                                                    Text=" AvaloniaUi"
+                                                    TextDecorations="{x:Null}" />
+                                                <TextBlock
+                                                    Margin="2,0,0,0"
+                                                    FontSize="13"
+                                                    Foreground="{DynamicResource TextColor}"
+                                                    Text="docs.avaloniaui.net"
+                                                    TextDecorations="{x:Null}" />
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </Border>
+                                </HyperlinkButton>
+                            </WrapPanel>
+                            <StackPanel
+                                Margin="20,10,20,0"
+                                VerticalAlignment="Top"
+                                DockPanel.Dock="Top">
+                                <Grid VerticalAlignment="Top">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top">
+                                        <Image.Source>
+                                            <DrawingImage>
+                                                <DrawingImage.Drawing>
+                                                    <GeometryDrawing Brush="{DynamicResource TextColor}">
+                                                        <GeometryDrawing.Geometry>
+                                                            <PathGeometry Figures="M723.77001953125,333.55999755859375L642.9000244140625,574.8599853515625C681.3400268554688,595.4299926757812,749.510009765625,619.239990234375,806.6199951171875,572.3400268554688L723.77001953125,333.55999755859375z M299.55999755859375,333.55999755859375L218.69000244140625,574.8599853515625C257.1099853515625,595.4099731445312,325.2699890136719,619.239990234375,382.4100036621094,572.3400268554688L299.55999755859375,333.55999755859375z M509.24639892578125,67.12796020507812C513.7525024414062,67.17749786376953 518.324951171875,68.11250305175781 522.719970703125,70.02999877929688 523.9400024414062,70.55999755859375 525,71.29000091552734 526.1300048828125,71.94000244140625 535.1300048828125,74.91000366210938 542.9299926757812,81.41000366210938 547.0599975585938,90.76000213623047 589.8900146484375,187.75999450683594 644.2000122070312,206.74000549316406 723.5499877929688,206.74000549316406 803.3400268554688,206.74000549316406 858,187.30999755859375 901.27001953125,87.97000122070312 908.9099731445312,70.41000366210938 929.3300170898438,62.36000061035156 946.9199829101562,70.02999877929688 964.47998046875,77.66999816894531 972.510009765625,98.12000274658203 964.8599853515625,115.66999816894531 915.7899780273438,228.3300018310547 845.530029296875,263.2200012207031 776.1199951171875,272.7900085449219L876.8900146484375,563.280029296875C882.7999877929688,580.3400268554688 878.4600219726562,599.489990234375 865.8599853515625,612.0900268554688 825.4400024414062,652.5900268554688 778.2000122070312,668.3699951171875 731.3800048828125,668.3699951171875 680.9500122070312,668.3699951171875 631,650.0700073242188 590.5399780273438,624.6099853515625 572.2999877929688,613.1500244140625 564.4099731445312,590.6900024414062 571.3599853515625,570L670.97998046875,272.80999755859375C628.1300048828125,266.94000244140625,585.010009765625,251.3699951171875,546.7899780273438,213.99000549316406L546.7899780273438,887.75 719.47998046875,887.75C738.6300048828125,887.75 754.1599731445312,903.280029296875 754.1599731445312,922.4299926757812 754.1599731445312,941.5800170898438 738.6400146484375,957.1099853515625 719.47998046875,957.1099853515625L315.29998779296875,957.1099853515625C296.1499938964844,957.1099853515625 280.6199951171875,941.5800170898438 280.6199951171875,922.4299926757812 280.6199951171875,903.280029296875 296.1400146484375,887.75 315.29998779296875,887.75L477.4200134277344,887.75 477.4200134277344,212.42999267578125C438.79998779296875,250.8800048828125,395.2099914550781,266.82000732421875,351.9100036621094,272.7900085449219L452.69000244140625,563.280029296875C458.6099853515625,580.25 454.30999755859375,599.4199829101562 441.7200012207031,612.0399780273438 401.260009765625,652.5700073242188 354,668.3599853515625 307.1600036621094,668.3599853515625 256.739990234375,668.3599853515625 206.8000030517578,650.0599975585938 166.33999633789062,624.6099853515625 148.08999633789062,613.1199951171875 140.22000122070312,590.6699829101562 147.16000366210938,570L246.75999450683594,272.82000732421875C177.82000732421875,263.3800048828125 108.08999633789062,229.08999633789062 59.400001525878906,118.79000091552734 51.650001525878906,101.25 59.59000015258789,80.77999877929688 77.11000061035156,73.05000305175781 94.66999816894531,65.30000305175781 115.0999984741211,73.26000213623047 122.8499984741211,90.76000213623047 165.6699981689453,187.75999450683594 219.99000549316406,206.74000549316406 299.3500061035156,206.74000549316406 379.1300048828125,206.74000549316406 433.7799987792969,187.30999755859375 477.07000732421875,87.97000122070312 482.8074951171875,74.80000305175781 495.7281494140625,66.97937774658203 509.24639892578125,67.12796020507812z" />
+                                                        </GeometryDrawing.Geometry>
+                                                    </GeometryDrawing>
+                                                </DrawingImage.Drawing>
+                                            </DrawingImage>
+                                        </Image.Source>
+                                    </Image>
+                                    <TextBlock
+                                        Margin="30,0,0,0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        FontFamily="{DynamicResource Font}"
+                                        FontSize="18"
+                                        Foreground="{DynamicResource TextColor}"
+                                        Text="GNU GPL 3.0"
+                                        TextDecorations="{x:Null}" />
+                                </Grid>
+                                <TextBlock
+                                    Margin="2,3,10,0"
+                                    DockPanel.Dock="Bottom"
+                                    FontFamily="{DynamicResource Font}"
+                                    FontSize="13"
+                                    Foreground="{DynamicResource TextColor}"
+                                    Text="{x:Static properties:MainLang.GPL3Text}"
+                                    TextDecorations="{x:Null}"
+                                    TextWrapping="Wrap" />
+                            </StackPanel>
+                            <Grid Margin="10,12,10,10" DockPanel.Dock="Top">
+                                <TextBlock
+                                    Margin="10,0,0,0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    FontFamily="{DynamicResource Font}"
+                                    FontSize="15"
+                                    Foreground="{DynamicResource TextColor}"
+                                    Text="{x:Static properties:MainLang.OpenSourceProjectUsageTable}" />
+                                <WrapPanel Margin="5,25,5,0">
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/CurseForgeCommunity/.NET-APIClient">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" CurseForge.APIClient "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/amwx/FluentAvalonia">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" FluentAvaloniaUI "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/irihitech/Ursa.Avalonia">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" Irihi.Ursa "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/Blessing-Studio/MinecraftLaunch.Skin">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" MinecraftLaunch.Skin "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/naudio/NAudio">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" NAudio "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/irihitech/Semi.Avalonia">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" Semi.Avalonia "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/Ink-Marks-Studio/StarLight.Core">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" StarLight_Core "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://github.com/Blessing-Studio/MinecraftLaunch">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" MinecraftLaunch "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                    <HyperlinkButton FontFamily="{DynamicResource Font}" NavigateUri="https://www.newtonsoft.com/json">
+                                        <TextBlock
+                                            Foreground="{DynamicResource SystemAccentColor}"
+                                            Text=" Newtonsoft.Json "
+                                            TextDecorations="{x:Null}" />
+                                    </HyperlinkButton>
+                                </WrapPanel>
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                    <Border
+                        Padding="10"
+                        Background="{DynamicResource 1x}"
+                        CornerRadius="5"
+                        Opacity="{DynamicResource Opacity}">
+                        <StackPanel
+                            Margin="0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Spacing="10">
+                            <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <StackPanel Margin="5,0,0,0" DockPanel.Dock="Left">
+                                    <TextBlock FontFamily="{DynamicResource Font}" Text="Le Yu Minecraft Launcher(LeYMCL)是基于我的世界 YMCL 启动器开发的，YMCL 和 LeYMCL 均为我司（上海乐迦特网络科技有限公司）管理" />
+                                </StackPanel>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Border>
+</UserControl>
