@@ -64,10 +64,10 @@ jobs:
           dotnet msbuild -t:BundleApp -p:RuntimeIdentifier=osx-arm64  -property:Configuration=Release -p:SelfContained=true
           cd ./bin/Release/net8.0/
           cd ./osx-x64/publish/
-          zip -9 -r ../../LeYMCL.Main.osx.mac.x64.app.zip ./YMCL.app
+          zip -9 -r ../../LeYMCL.Main.osx.mac.x64.app.zip ./LeYMCL.app
           cd ../../
           cd ./osx-arm64/publish/
-          zip -9 -r ../../LeYMCL.Main.osx.mac.arm64.app.zip ./YMCL.app
+          zip -9 -r ../../LeYMCL.Main.osx.mac.arm64.app.zip ./LeYMCL.app
       - name: Build-WinExe
         run: |
           cd ./LeYMCL.Main
@@ -143,15 +143,15 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: linux-artifacts
-          path: ./YMCL.Release/
+          path: ./LeYMCL.Release/
       - name: Download-WindowsArtifacts
         uses: actions/download-artifact@v3
         with:
           name: win-artifacts
-          path: ./YMCL.Release/
+          path: ./LeYMCL.Release/
       - name: List Files
         run: |
-          ls -la ./YMCL.Release/
+          ls -la ./LeYMCL.Release/
       - name: Publish Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
@@ -160,6 +160,6 @@ jobs:
           automatic_release_tag: "AutoPublish-${{ steps.gdate.outputs.date }}"
           prerelease: false
           files: |
-            YMCL.Release/*.exe
-            YMCL.Release/Deploy/OUT/*.AppImage
-            YMCL.Release/bin/Release/net8.0/*.zip
+            LeYMCL.Release/*.exe
+            LeYMCL.Release/Deploy/OUT/*.AppImage
+            LeYMCL.Release/bin/Release/net8.0/*.zip
